@@ -1,5 +1,6 @@
 package com.company.fraud.controller;
 
+import com.company.fraud.dto.FraudResponse;
 import com.company.fraud.service.FraudCheckService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ public class FraudController {
     private final FraudCheckService fraudCheckService;
 
     @GetMapping(path = "{customerId}")
-    public Boolean isFraudster(@PathVariable("customerId") Integer customerId) {
-        return fraudCheckService.isFraudulentCustomer(customerId);
+    public FraudResponse isFraudster(@PathVariable("customerId") Integer customerId) {
+        return new FraudResponse(fraudCheckService.isFraudulentCustomer(customerId));
     }
 }

@@ -17,9 +17,10 @@ import java.time.LocalDateTime;
 public class FraudCheckService {
     private final FraudCheckHistoryRepository fraudRepository;
 
-    public boolean isFraudulentCustomer(Integer customerId) {
+    public Boolean isFraudulentCustomer(Integer customerId) {
         fraudRepository.save(FraudCheckHistory.builder()
                 .customerId(customerId)
+                .isFraudster(false)
                 .createdAt(LocalDateTime.now())
                 .build());
 
