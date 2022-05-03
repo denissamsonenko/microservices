@@ -26,6 +26,4 @@ target
 hs_err_pid*
 
 # Others
-.idea
-app.iml
-
+customer.iml

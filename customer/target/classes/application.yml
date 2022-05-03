@@ -4,6 +4,7 @@ server:
 spring:
   application:
     name: customer
+
   datasource:
     username: root
     url: jdbc:postgresql://localhost:5432/customer
